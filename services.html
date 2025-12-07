@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Sabchill Refrigeration Zambia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0056a4;
+            --secondary: #e63946;
+            --dark: #333333;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --whatsapp: #25D366;
+            --facebook: #1877F2;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .logo-text span {
+            color: var(--secondary);
+        }
+
+        .desktop-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+
+        .desktop-nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 1.05rem;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .desktop-nav a:hover,
+        .desktop-nav a.active {
+            color: var(--secondary);
+        }
+
+        .desktop-nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            left: 0;
+            bottom: -5px;
+            transition: width 0.3s;
+        }
+
+        .desktop-nav a:hover::after,
+        .desktop-nav a.active::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        /* Services Hero */
+        .services-hero {
+            background: linear-gradient(rgba(0, 86, 164, 0.9), rgba(0, 86, 164, 0.9));
+            color: white;
+            padding: 150px 0 80px;
+            text-align: center;
+            margin-top: 80px;
+            position: relative;
+        }
+
+        .services-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .services-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--whatsapp);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.8rem;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+            z-index: 999;
+            transition: all 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+        }
+
+        .whatsapp-text {
+            position: absolute;
+            right: 70px;
+            background: var(--whatsapp);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            opacity: 0;
+            transform: translateX(20px);
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+
+        .whatsapp-float:hover .whatsapp-text {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Services Section */
+        .services-detail {
+            padding: 100px 0;
+            background-color: var(--light);
+        }
+
+        .service-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 100px;
+            gap: 50px;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .service-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .service-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .service-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(0,86,164,0.1), rgba(230,57,70,0.1));
+            z-index: 1;
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s;
+        }
+
+        .service-item:hover .service-image img {
+            transform: scale(1.05);
+        }
+
+        .service-content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .service-content h2 {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .service-content h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+
+        .service-features {
+            list-style: none;
+            margin: 25px 0;
+        }
+
+        .service-features li {
+            margin-bottom: 12px;
+            padding-left: 30px;
+            position: relative;
+            color: var(--gray);
+        }
+
+        .service-features li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--secondary);
+            color: white;
+            padding: 14px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3);
+        }
+
+        .btn:hover {
+            background-color: #d32f2f;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(230, 57, 70, 0.4);
+        }
+
+        .btn i {
+            font-size: 1.1rem;
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 250px;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: flex-end;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay h3 {
+            color: white;
+            font-size: 1.3rem;
+        }
+
+        /* Quote Section */
+        .quote-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, #004080 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .quote-section h2 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        .quote-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 8px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .form-control::placeholder {
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 70px 0 30px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo span {
+            color: var(--secondary);
+        }
+
+        .footer-about p {
+            opacity: 0.7;
+            margin-bottom: 20px;
+        }
+
+        .footer-contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--whatsapp);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: all 0.3s;
+        }
+
+        .footer-contact-btn:hover {
+            background-color: #128C7E;
+            transform: translateY(-3px);
+        }
+
+        .footer-links h4,
+        .footer-contact h4 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            color: white;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+
+        .footer-contact p {
+            opacity: 0.7;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.6;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .services-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .service-item {
+                flex-direction: column !important;
+            }
+            
+            .service-image img {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .desktop-nav {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .mobile-nav {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 280px;
+                height: 100%;
+                background: white;
+                padding: 100px 30px 30px;
+                box-shadow: 5px 0 15px rgba(0,0,0,0.1);
+                transition: left 0.3s;
+                z-index: 999;
+            }
+            
+            .mobile-nav.active {
+                left: 0;
+            }
+            
+            .mobile-nav ul {
+                list-style: none;
+            }
+            
+            .mobile-nav li {
+                margin-bottom: 25px;
+            }
+            
+            .mobile-nav a {
+                text-decoration: none;
+                color: var(--dark);
+                font-size: 1.2rem;
+                font-weight: 500;
+                display: block;
+                padding: 10px 0;
+                border-bottom: 1px solid #eee;
+            }
+            
+            .mobile-nav a.active {
+                color: var(--secondary);
+            }
+            
+            .mobile-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.5);
+                display: none;
+                z-index: 998;
+            }
+            
+            .mobile-overlay.active {
+                display: block;
+            }
+            
+            .services-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .service-content h2 {
+                font-size: 1.8rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 55px;
+                height: 55px;
+                font-size: 1.6rem;
+            }
+            
+            .whatsapp-text {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .services-hero {
+                padding: 130px 0 60px;
+            }
+            
+            .service-item {
+                padding: 20px;
+                margin-bottom: 60px;
+            }
+            
+            .btn {
+                padding: 12px 25px;
+                font-size: 1rem;
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/260968149660" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-text">Get Quote</span>
+    </a>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-snowflake logo-icon"></i>
+                <div class="logo-text">Sabchill<span>Refrigeration</span></div>
+            </a>
+            
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav" id="mobileNav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html" class="active">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Services Hero -->
+    <section class="services-hero">
+        <div class="container">
+            <h1>Our Professional Services</h1>
+            <p>Comprehensive HVAC and refrigeration solutions tailored to your specific needs in Zambia</p>
+        </div>
+    </section>
+
+    <!-- Services Detail -->
+    <section class="services-detail">
+        <div class="container">
+            <!-- Commercial Refrigeration -->
+            <div class="service-item" id="refrigeration">
+                <div class="service-image">
+                    <!-- Commercial Refrigeration Image from Facebook -->
+                    <img src="https://www.facebook.com/share/p/1BCbUjWdM8/" 
+                         alt="Commercial Refrigeration Installation"
+                         onerror="this.src='https://via.placeholder.com/600x400/0056a4/ffffff?text=Commercial+Refrigeration+Installation'">
+                </div>
+                <div class="service-content">
+                    <h2>Commercial Refrigeration</h2>
+                    <p>We provide complete commercial refrigeration solutions for supermarkets, restaurants, clinics, and food processing facilities across Zambia. Our expert team handles installations, maintenance, and repairs of all refrigeration systems.</p>
+                    <ul class="service-features">
+                        <li>Walk-in coolers and freezers installation</li>
+                        <li>Supermarket refrigeration systems</li>
+                        <li>Restaurant and kitchen refrigeration</li>
+                        <li>Medical and pharmaceutical refrigeration</li>
+                        <li>24/7 emergency repair service</li>
+                        <li>Preventive maintenance programs</li>
+                        <li>Energy efficiency optimization</li>
+                        <li>Refrigerant management</li>
+                    </ul>
+                    <a href="contact.html" class="btn">
+                        <i class="fas fa-calendar-check"></i>
+                        Request Service
+                    </a>
+                </div>
+            </div>
+
+            <!-- Air Conditioning -->
+            <div class="service-item" id="ac">
+                <div class="service-image">
+                    <!-- AC Service Image -->
+                    <img src="https://via.placeholder.com/600x400/e63946/ffffff?text=Air+Conditioning+Services" 
+                         alt="Air Conditioning Services">
+                </div>
+                <div class="service-content">
+                    <h2>Air Conditioning Services</h2>
+                    <p>Complete air conditioning solutions for residential, commercial, and industrial applications. We handle all types of AC systems from installation to repair and maintenance.</p>
+                    <ul class="service-features">
+                        <li>Split AC installation and repair</li>
+                        <li>Central air conditioning systems</li>
+                        <li>Window unit installation and service</li>
+                        <li>Ductless mini-split systems</li>
+                        <li>AC maintenance and cleaning</li>
+                        <li>Energy efficiency optimization</li>
+                        <li>Ductwork design and installation</li>
+                        <li>24/7 emergency AC repair</li>
+                    </ul>
+                    <a href="contact.html" class="btn">
+                        <i class="fas fa-snowflake"></i>
+                        Get AC Service
+                    </a>
+                </div>
+            </div>
+
+            <!-- HVAC Maintenance -->
+            <div class="service-item" id="maintenance">
+                <div class="service-image">
+                    <!-- HVAC Maintenance Image -->
+                    <img src="https://via.placeholder.com/600x400/333333/ffffff?text=HVAC+Maintenance+%26+Repair" 
+                         alt="HVAC Maintenance & Repair">
+                </div>
+                <div class="service-content">
+                    <h2>HVAC Maintenance & Repair</h2>
+                    <p>Regular maintenance is essential for optimal performance and longevity of your HVAC systems. We offer comprehensive maintenance packages and emergency repair services.</p>
+                    <ul class="service-features">
+                        <li>Preventive maintenance plans</li>
+                        <li>24/7 emergency repair services</li>
+                        <li>System performance evaluation</li>
+                        <li>Refrigerant leak detection</li>
+                        <li>Component replacement and upgrades</li>
+                        <li>System efficiency audits</li>
+                        <li>Filter replacement services</li>
+                        <li>Annual maintenance contracts</li>
+                    </ul>
+                    <a href="contact.html" class="btn">
+                        <i class="fas fa-tools"></i>
+                        Schedule Maintenance
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Work Gallery</h2>
+                <p>See examples of our professional HVAC and refrigeration projects</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/400x300/0056a4/ffffff?text=Commercial+Installation" alt="Project 1">
+                    <div class="gallery-overlay">
+                        <h3>Commercial Installation</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/400x300/e63946/ffffff?text=AC+Repair+Work" alt="Project 2">
+                    <div class="gallery-overlay">
+                        <h3>AC Repair Work</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/400x300/333333/ffffff?text=Maintenance+Service" alt="Project 3">
+                    <div class="gallery-overlay">
+                        <h3>Maintenance Service</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="quote-section">
+        <div class="container">
+            <h2>Get a Free Quote</h2>
+            <p>Contact us today for a free consultation and quote on your HVAC needs</p>
+            
+            <div class="quote-form">
+                <form id="quoteForm">
+                    <div class="form-group">
+                        <label for="quoteName">Full Name</label>
+                        <input type="text" id="quoteName" class="form-control" placeholder="Your Name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="quotePhone">Phone Number</label>
+                        <input type="tel" id="quotePhone" class="form-control" placeholder="096 8149660" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="quoteService">Service Needed</label>
+                        <select id="quoteService" class="form-control" required>
+                            <option value="">Select Service</option>
+                            <option value="refrigeration">Commercial Refrigeration</option>
+                            <option value="ac">Air Conditioning</option>
+                            <option value="maintenance">HVAC Maintenance</option>
+                            <option value="repair">Emergency Repair</option>
+                            <option value="consultation">Free Consultation</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="btn" style="width: 100%; background-color: var(--secondary);">
+                        <i class="fab fa-whatsapp"></i>
+                        Get Quote on WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <div class="footer-logo">Sabchill<span>Refrigeration</span></div>
+                    <p>Professional HVAC and refrigeration services in Zambia. Quality workmanship guaranteed with 24/7 support.</p>
+                    <a href="https://wa.me/260968149660" class="footer-contact-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        WhatsApp Us Now
+                    </a>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="services.html"><i class="fas fa-cogs"></i> Services</a></li>
+                        <li><a href="contact.html"><i class="fas fa-phone"></i> Contact</a></li>
+                        <li><a href="https://www.facebook.com/share/p/1CNMffP7RE/" target="_blank"><i class="fab fa-facebook"></i> Facebook Page</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Lusaka, Zambia</p>
+                    <p><i class="fas fa-phone"></i> 096 8149660</p>
+                    <p><i class="fab fa-whatsapp"></i> WhatsApp: 096 8149660</p>
+                    <p><i class="fas fa-clock"></i> Mon-Sat: 8AM-6PM | 24/7 Emergency</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 Sabchill Refrigeration Zambia. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Functionality
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        const mobileOverlay = document.getElementById('mobileOverlay');
+        
+        function toggleMobileMenu() {
+            mobileNav.classList.toggle('active');
+            mobileOverlay.classList.toggle('active');
+            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+            
+            // Change menu icon
+            const icon = mobileMenuBtn.querySelector('i');
+            if (icon.classList.contains('fa-bars')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        }
+        
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+        mobileOverlay.addEventListener('click', toggleMobileMenu);
+        
+        // Close mobile menu when clicking links
+        document.querySelectorAll('.mobile-nav a').forEach(link => {
+            link.addEventListener('click', toggleMobileMenu);
+        });
+        
+        // Quote Form Submission
+        document.getElementById('quoteForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('quoteName').value;
+            const phone = document.getElementById('quotePhone').value;
+            const service = document.getElementById('quoteService').value;
+            
+            const serviceNames = {
+                'refrigeration': 'Commercial Refrigeration',
+                'ac': 'Air Conditioning',
+                'maintenance': 'HVAC Maintenance',
+                'repair': 'Emergency Repair',
+                'consultation': 'Free Consultation'
+            };
+            
+            const whatsappMessage = `Hello Sabchill Refrigeration,%0A%0A*Free Quote Request*%0A%0AName: ${name}%0APhone: ${phone}%0AService Needed: ${serviceNames[service]}%0A%0APlease send me a quote for this service.`;
+            
+            window.open(`https://wa.me/260968149660?text=${whatsappMessage}`, '_blank');
+            
+            this.reset();
+            
+            // Show success message
+            alert('Thank you! Your quote request has been sent. We will contact you shortly via WhatsApp.');
+        });
+        
+        // Gallery Modal
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const imgSrc = this.querySelector('img').src;
+                const modal = document.createElement('div');
+                modal.style.cssText = `
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0,0,0,0.95);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 10000;
+                    cursor: pointer;
+                `;
+                
+                const modalImg = document.createElement('img');
+                modalImg.src = imgSrc;
+                modalImg.style.maxWidth = '90%';
+                modalImg.style.maxHeight = '90%';
+                modalImg.style.borderRadius = '8px';
+                modalImg.style.boxShadow = '0 10px 40px rgba(0,0,0,0.3)';
+                
+                const closeBtn = document.createElement('button');
+                closeBtn.innerHTML = '×';
+                closeBtn.style.cssText = `
+                    position: absolute;
+                    top: 20px;
+                    right: 20px;
+                    background: ${getComputedStyle(document.documentElement).getPropertyValue('--secondary')};
+                    color: white;
+                    border: none;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    font-size: 1.5rem;
+                    cursor: pointer;
+                    z-index: 10001;
+                `;
+                
+                modal.appendChild(modalImg);
+                modal.appendChild(closeBtn);
+                document.body.appendChild(modal);
+                
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal || e.target === closeBtn) {
+                        document.body.removeChild(modal);
+                    }
+                });
+            });
+        });
+        
+        // Set active navigation link
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split('/').pop();
+            const navLinks = document.querySelectorAll('.desktop-nav a, .mobile-nav a');
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Smooth scrolling for service links
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.location.hash) {
+                const targetElement = document.querySelector(window.location.hash);
+                if (targetElement) {
+                    setTimeout(() => {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }, 300);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
